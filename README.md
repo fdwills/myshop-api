@@ -1,4 +1,4 @@
 myshop-api
 ==========
 
-API for shop
+This is API server for [myshop](http://shop.fdwills.com)

@@ -1,0 +1,45 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /var/lib/mysql/mysql.sock
+
+development:
+  database: myshop_development
+  <<: *default
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  database: myshop_test
+  <<: *default
+
+production:
+  database: myshop_production
+  <<: *default
+
+###### for common login ####
+login_development:
+  database: fdwills_asia_development
+  <<: *default
+
+login_test:
+  database: fdwills_asia_test
+  <<: *default
+
+login_production:
+  database: fdwills_asia_production
+  <<: *default
