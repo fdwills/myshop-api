@@ -10,6 +10,7 @@ class Good < BaseModel
   has_many :orders
   scope :recent , -> { order('created_at DESC') }
   scope :released, -> { where(state: ST_RELEASED) }
+  scope :paginate, ->(page, ipp) { limit(ipp).offset((page - 1)* ipp) }
 
   validates :title, presence: true, length: { maximum: 255 }
   validates_inclusion_of :state, :in => [ST_RELEASED, ST_DRAFT]

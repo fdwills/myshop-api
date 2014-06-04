@@ -1,1 +1,1 @@
-json.test @good
+json.good @good

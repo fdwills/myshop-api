@@ -1,6 +1,8 @@
 class GoodsController < ApplicationController
   get '' do
-    @goods = Good.all
+    page = params[:page].to_i || 1
+    ipp = params[:ipp].to_i || 5
+    @goods = Good.released.recent.paginate(page, ipp)
     jbuilder :'goods/index'
   end
 

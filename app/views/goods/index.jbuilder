@@ -1,1 +1,1 @@
-json.test @goods
+json.goods @goods
